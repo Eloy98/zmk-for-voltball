@@ -1,0 +1,5 @@
+config SHIELD_VOLTBALL_LEFT
+    def_bool $(shields_list_contains,voltball_left)
+
+config SHIELD_VOLTBALL_RIGHT
+    def_bool $(shields_list_contains,voltball_right)

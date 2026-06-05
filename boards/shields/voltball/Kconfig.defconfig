@@ -1,0 +1,19 @@
+if SHIELD_VOLTBALL_LEFT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_KEYBOARD_NAME
+    default "Voltball"
+
+endif
+
+if SHIELD_VOLTBALL_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_KEYBOARD_NAME
+    default "Voltball"
+
+endif
