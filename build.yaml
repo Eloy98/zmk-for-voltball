@@ -1,9 +1,7 @@
 include:
   - board: nice_nano_v2
     shield: voltball_left
-    artifact-name: voltball_left
   - board: nice_nano_v2
     shield: voltball_right
-    artifact-name: voltball_right
   - board: nice_nano_v2
     shield: settings_reset
