@@ -8,7 +8,6 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &voltball_layout;
-        zmk,battery = &non_lipo_battery;
     };
 
     default_transform: keymap_transform_0 {
@@ -34,28 +33,5 @@
         display-name = "Voltball";
         kscan = <&kscan0>;
         transform = <&default_transform>;
-    };
-
-    leds {
-        compatible = "gpio-leds";
-
-        status_led: status_led {
-            gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
-            label = "Status LED";
-        };
-    };
-
-    status_led_device: status_led_device {
-        compatible = "zmk,status-led";
-        led = <&status_led>;
-    };
-
-    vbatt: vbatt {
-        status = "disabled";
-    };
-
-    non_lipo_battery: non_lipo_battery {
-        compatible = "zmk,non-lipo-battery";
-        io-channels = <&adc 7>;
     };
 };
