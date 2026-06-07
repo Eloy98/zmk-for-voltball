@@ -50,16 +50,16 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 
-    pointing_device: pointing_device@0 {
+    trackball_central: trackball_central@0 {
         status = "okay";
         compatible = "pixart,paw3222";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 20 GPIO_ACTIVE_LOW>;
+        irq-gpios = <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
 
-&pointing_listener {
+&trackball_central_listener {
     status = "okay";
-    device = <&pointing_device>;
+    device = <&trackball_central>;
 };
