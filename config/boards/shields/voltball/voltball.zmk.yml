@@ -6,6 +6,7 @@ requires:
   - pro_micro
 features:
   - keys
+  - trackball
 siblings:
   - voltball_left
   - voltball_right
