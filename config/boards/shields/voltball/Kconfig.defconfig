@@ -1,29 +1,21 @@
 if SHIELD_VOLTBALL_LEFT
 
-config ZMK_SPLIT
-    default y
-
 config ZMK_KEYBOARD_NAME
     default "Voltball"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
 
 endif
 
 if SHIELD_VOLTBALL_LEFT || SHIELD_VOLTBALL_RIGHT
 
-config NFCT_PINS_AS_GPIOS
-    default y
-
 config ZMK_SPLIT
-    default y
-
-config INPUT
     default y
 
 config ZMK_STATUS_LED
     default y
 
-config SPI
-    default y
 
 config ZMK_POINTING
     default y
