@@ -22,7 +22,7 @@
         };
         low-power-enable;
     };
-}
+};
 
 &kscan0 {
     row-gpios
