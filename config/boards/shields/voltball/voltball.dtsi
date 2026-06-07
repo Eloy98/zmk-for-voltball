@@ -48,4 +48,9 @@
         compatible = "zmk,status-led";
         led = <&status_led>;
     };
+
+    pointing_listener: pointing_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
 };

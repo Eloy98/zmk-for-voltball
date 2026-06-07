@@ -12,5 +12,8 @@ manifest:
     - name: zmk-feature-status-led
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-driver-paw3222
+      remote: sekigon-gonnoc
+      revision: main
   self:
     path: config
