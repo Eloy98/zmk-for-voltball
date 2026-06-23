@@ -3,9 +3,21 @@ if SHIELD_VOLTBALL_RIGHT
 config ZMK_KEYBOARD_NAME
     default "Voltball"
 
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-	default y
+config ZMK_BLE
+    default y
 
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config INPUT
+    default y
+
+config ZMK_POINTING
+    default y
+
+config PAW3222
+    default y
+    
 endif
 
 if SHIELD_VOLTBALL_LEFT || SHIELD_VOLTBALL_RIGHT
@@ -17,10 +29,6 @@ config ZMK_STATUS_LED
     default y
 
 
-config ZMK_POINTING
-    default y
 
-config PAW3222
-    default y
 
 endif
