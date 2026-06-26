@@ -5,6 +5,7 @@
 #include "voltball.dtsi"
 #include <zephyr/dt-bindings/gpio/nordic-nrf-gpio.h>
 #include <input/processors.dtsi>
+#include <input/processors/zmk-input-processor-keybind.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
@@ -21,6 +22,24 @@
         require-prior-idle-ms = <0>;
         /* 中文: 不排除任何键位；English: No key positions are excluded from activation. */
         excluded-positions = <>;
+    };
+
+    /*
+     * 中文: 第 2 层使用轨迹球输出四向方向键。
+     * English: Converts trackball motion to four-way arrow keys on layer 2.
+     */
+    zip_trackball_arrows: zip_trackball_arrows {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        mode = <1>;
+        bindings = <&kp RIGHT>,
+                   <&kp LEFT>,
+                   <&kp DOWN>,
+                   <&kp UP>;
+        tick = <40>;
+        wait-ms = <0>;
+        tap-ms = <10>;
     };
 };
 
@@ -91,6 +110,15 @@
      * English: Normal trackball mode activate layer 3 for 500 ms after threshold movement.
      */
     input-processors = <&zip_threshold_temp_layer 3 500>;
+
+    /*
+     * 中文: 第 2 层把轨迹球移动转换为上下左右方向键。
+     * English: On layer 2, convert trackball motion to arrow-key taps.
+     */
+    arrows {
+        layers = <2>;
+        input-processors = <&zip_trackball_arrows>;
+    };
 
     /*
      * 中文: 第 5 层启用滚动模式，把轨迹球移动转换成滚轮事件。
