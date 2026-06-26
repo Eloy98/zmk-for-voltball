@@ -35,8 +35,8 @@
         mode = <1>;
         bindings = <&kp RIGHT>,
                    <&kp LEFT>,
-                   <&kp DOWN>,
-                   <&kp UP>;
+                   <&kp UP>,
+                   <&kp DOWN>;
         tick = <12>;
         wait-ms = <0>;
         tap-ms = <8>;
