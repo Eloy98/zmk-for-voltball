@@ -25,8 +25,8 @@
     };
 
     /*
-     * 中文: 第 2 层使用轨迹球输出四向方向键。
-     * English: Converts trackball motion to four-way arrow keys on layer 2.
+     * 中文: 第 1 层使用轨迹球输出四向方向键。
+     * English: Converts trackball motion to four-way arrow keys on layer 1.
      */
     zip_trackball_arrows: zip_trackball_arrows {
         compatible = "zmk,input-processor-keybind";
@@ -37,9 +37,10 @@
                    <&kp LEFT>,
                    <&kp DOWN>,
                    <&kp UP>;
-        tick = <40>;
+        tick = <12>;
         wait-ms = <0>;
-        tap-ms = <10>;
+        tap-ms = <8>;
+        max_pending_activations = <10>;
     };
 };
 
@@ -112,11 +113,11 @@
     input-processors = <&zip_threshold_temp_layer 3 500>;
 
     /*
-     * 中文: 第 2 层把轨迹球移动转换为上下左右方向键。
-     * English: On layer 2, convert trackball motion to arrow-key taps.
+     * 中文: 第 1 层把轨迹球移动转换为上下左右方向键。
+     * English: On layer 1, convert trackball motion to arrow-key taps.
      */
     arrows {
-        layers = <2>;
+        layers = <1>;
         input-processors = <&zip_trackball_arrows>;
     };
 
