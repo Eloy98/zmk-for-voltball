@@ -28,7 +28,11 @@ config ZMK_SPLIT
 config ZMK_STATUS_LED
     default y
 
+config INPUT
+    default y
 
+config SPI
+    default y    
 
 
 endif
