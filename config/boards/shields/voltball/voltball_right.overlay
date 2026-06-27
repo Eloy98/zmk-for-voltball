@@ -109,7 +109,7 @@
          * 中文: 常用值: 608, 760, 950, 1140, 1520, 1900, 2280, 2660, 3040, 3420, 3800, 4180, 4560, 4826。
          * English: Common values: 608, 760, 950, 1140, 1520, 1900, 2280, 2660, 3040, 3420, 3800, 4180, 4560, 4826.
          */
-        res-cpi = <3800>;
+        res-cpi = <1140>;
     };
 };
 
@@ -139,14 +139,8 @@
     scroller {
         layers = <5>;
         input-processors =
-            /* 中文: 交换 X/Y 轴；English: Swap the X and Y axes. */
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-            /* 中文: 反转 X 轴；English: Invert the X axis. */
-            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
             /* 中文: 将指针移动映射为滚动事件；English: Map pointer motion to scroll events. */
             <&zip_xy_to_scroll_mapper>,
-            /* 中文: 反转滚动 Y 轴；English: Invert the scroll Y axis. */
-            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
             /* 中文: 将滚动量缩放为 1/5；English: Scale scroll amount to 1/5. */
             <&zip_scroll_scaler 1 5>;
     };
